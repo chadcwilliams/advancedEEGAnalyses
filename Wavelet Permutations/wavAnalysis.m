@@ -1,9 +1,9 @@
-function [WAV_diff_e WAV_data1 WAV_data2 WAV_diff WAV_diff_participants zmap_not_corrected zmap_voxel zmap_cluster] = wavAnalysis_etc(data,electrode,conditions,freq_cutoff,time_start,time_end,n_permutations,alpha_value)
+function [WAV_diff_e WAV_data1 WAV_data2 WAV_diff WAV_diff_participants zmap_not_corrected zmap_voxel zmap_cluster] = wavAnalysis(data,electrode,conditions,freq_cutoff,time_start,time_end,n_permutations,alpha_value)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%Written by Chad C. Williams, PhD student in the Krigolson Lab, 2019   %%
 %%Code based off of Micheal X. Cohen                                    %%
-%%small modiications by Olav Krigolson                                   %%
+%%small modifications by Olav Krigolson                                 %%
 %%See http://mikexcohen.com/lectures.html                               %%
 %%Specifically, his video on permutations: https://youtu.be/-85FAQwD49Q %%   
 %%And on multiple comparison corrections: https://youtu.be/I0qoP7yvP-4  %%
@@ -133,7 +133,7 @@ subplot(3,3,6)
 zmap_voxel_contour = zmap_voxel;
 zmap_voxel_contour(zmap_voxel_contour~=0)=1;
 pcolor((WAV_diff)); shading interp; set(gca, 'YTick', 1:freq_cutoff, 'YTickLabel', 1:freq_cutoff); caxis([-1 1]); %Plot original data. The labels assume 1 Hz resolution
-hold on; contour(zmap_voxel,1,'black','linewidth',1);
+hold on; contour(zmap_voxel,2,'black','linewidth',1);
 title('Original Wavelet Difference Data');
 
 %% Permutations with Cluster Sizes
