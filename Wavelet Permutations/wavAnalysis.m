@@ -139,7 +139,7 @@ title('Original Wavelet Difference Data');
 %% Permutations with Cluster Sizes
 
 %Create Null Distribution
-max_cluster_size = zeros(1,n_permutations); %Null distribution for cluster sizes
+max_cluster_sizes = zeros(1,n_permutations); %Null distribution for cluster sizes
 
 %Determine Max Cluster Size of Each Permutation
 for perms = 1:n_permutations %Cycle through number of permutations
